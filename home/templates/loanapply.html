@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Loan Eligibility</title>
+    <link rel="stylesheet" href="{% static 'loanapply.css' %}">
+    <link rel="shortcut icon" href="lb logo 5.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <img
+          src="static/mainlogo.jpg"
+          alt=""
+        />
+    </nav>
+    <!-- <nav>
+        <img
+          src="Loan Buddy logo.jpg"
+          alt=""
+        />
+        <div class="rightPart">
+          <div class="navElems"><a href="#">Personal Loan</a></div>
+          <div class="navElems"><a href="#">Credit Tracker</a></div>
+          <div class="navElems">
+            Calculators <span><i class="ri-arrow-down-s-line"></i></span>
+          </div>
+          <div class="navElems"><a href="#">Contact Us</a></div>
+          <div class="navElems"><a href="Login.html">Login</a></div>
+        </div>
+      </nav>
+    <div class="main"> -->
+        <div class="left">
+            <h1>Instant Personal Loans up to <span>₹45000</span></h1>
+            <div class="leftbox">
+                <div class="feature">
+                    <i class="fa-solid fa-universal-access"></i>
+                    <h4>For student and salaried</h4>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>Approval in 10 mins</h4>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <h4>No collaterals and 100% digital process</h4>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-file-circle-minus"></i>
+                    <h4>Minimum documents and no paperwork</h4>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h4>Instant cash in your bank account</h4>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <h4>Options for Loan Extension</h4>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            
+            <h1>Apply for Loan</h1>
+            
+            <form action="{% url 'loan_apply1' %}" method="post">
+                {% csrf_token %}
+
+                <div>
+                  <label for="gender">Gender:</label>
+                  <select id="gender" name="gender"  required>
+                    <option value="">Select Option</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+              
+                <div>
+                  <label for="married">Married (Y/N):</label>
+                  <select id="married" name="married" required>
+                    <option value="">Select Option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              
+                <div>
+                  <label for="dependents">Number of Dependents:</label>
+                  <input type="number" id="dependents" name="dependents" min="0" required>
+                </div>
+              
+                <div>
+                  <label for="education">Education:</label>
+                  <select id="education" name="education" required>
+                    <option value="">Select Option</option>
+                    <option value="graduate">Graduate</option>
+                    <option value="undergraduate">Under Graduate</option>
+                  </select>
+                </div>
+              
+                <div>
+                  <label for="self_employed">Self Employed (Y/N):</label>
+                  <input type="text" id="self_employed" name="self_employed" maxlength="1" required>
+                </div>
+              
+                <div>
+                  <label for="applicant_income">Applicant Income:</label>
+                  <input type="number" id="applicant_income" name="applicant_income" min="0" required>
+                </div>
+              
+                <div>
+                  <label for="coapplicant_income">Coapplicant Income:</label>
+                  <input type="number" id="coapplicant_income" name="coapplicant_income" min="0" required>
+                </div>
+              
+                <div>
+                  <label for="loan_amount">Loan Amount (in thousands):</label>
+                  <input type="number" id="loan_amount" name="loan_amount" min="0" required>
+                </div>
+              
+                <div>
+                  <label for="loan_amount_term">Loan Amount Term (in months):</label>
+                  <input type="number" id="loan_amount_term" name="loan_amount_term" min="0">
+                </div>
+              
+                <div>
+                  <label for="credit_history">Credit History Meets Guidelines:</label>
+                  <select id="credit_history" name="credit_history">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              
+                <div>
+                  <label for="property_area">Property Area:</label>
+                  <select id="property_area" name="property_area">
+                    <option value="urban">Urban</option>
+                    <option value="semi-urban">Semi-Urban</option>
+                    <option value="rural">Rural</option>
+                  </select>
+                </div>
+                <section>
+                    <button type="submit" id="submit">Submit</button>
+                </section>
+                
+              
+              </form>
+        </div>
+    </div>
+</body>
+</html>

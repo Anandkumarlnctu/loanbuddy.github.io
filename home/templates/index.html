@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Buddy</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <link
+      rel="shortcut icon"
+      href="static/logofav.jpg"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <nav>
+      <img
+        src="static/mainlogo.jpg"
+        alt=""
+      />
+      <div class="rightPart">
+        <div class="navElems"><a href="#cards">Personal Loan</a></div>
+        <div class="navElems"><a href="#cards">Credit Tracker</a></div>
+        <div class="navElems">
+            Calculators <span><i class="ri-arrow-down-s-line"></i></span>
+        </div>
+        <div class="navElems"><a href="#footer">Contact Us</a></div>
+        
+        {% if user.is_authenticated %}
+        <!-- If user is logged in, display logout link -->
+        <div class="navElems"><a href="{% url 'logout' %}">Logout</a></div>
+        {% else %}
+        <!-- If user is not logged in, display login link -->
+        <div class="navElems"><a href="{% url 'login_user' %}">Login</a></div>
+        {% endif %}
+    </div>
+    
+    </nav>
+    <div class="main">
+      <div class="first">
+        <div class="leftFirst">
+          <h1>Mann hai</h1>
+          <h1 id="unique_color">toh Paisa hai</h1>
+          <p>
+            We help you take control of your finances with our full-suite of
+            personalized financial products
+          </p>
+          <button>Download app</button>
+        </div>
+        <div class="rightFirst">
+          <img
+            src="https://moneyview.in/images/home-page-header-banner-desktop.webp"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="second">
+        <div class="prehead"><h3>MoneyView Products</h3></div>
+        <div class="cards" id ="cards">
+            <div class="card">
+                <div class="cardhead">
+                    <h2>Personal<br>Loan</h2>
+                    <img src="https://moneyview.in/images/plProductCardRsIcon.webp" alt="Leftcardimg">
+                </div>
+                <div class="cardmain">
+                    <div>
+                        <p>Get up to</p>
+                        <br>
+                        <h4 style=" border-bottom: 3px solid seagreen;">₹10L in 10 mins</h4>
+                    </div>
+                    <div class="rightarrow">
+                        <h1 id="taketoapply"><i class="ri-arrow-right-line"></i></h1>
+                    </div>
+                </div>
+                <div class="cardbottom">
+                    <ul>
+                        <div class="listline">
+                            <img src="https://moneyview.in/images/ic-productSection-pl-prop1.svg" alt="chotiimg">
+                            <li>Zero Paperwork</li>
+                        </div>
+                        <div class="listline">
+                            <img src="https://moneyview.in/images/ic-productSection-pl-prop2.svg" alt="chotiimg">
+                            <li>Affordable EMIs</li>
+                        </div>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="card">
+                <div class="cardhead">
+                    <h2>Credit<br>Tracker</h2>
+                    <img src="https://moneyview.in/images/CT_ProductIconDesktop.webp" alt="Leftcardimg">
+                </div>
+                <div class="cardmain">
+                    <div>
+                        <p>Get a free credit report with</p>
+                        <br>
+                        <h4 style=" display: inline; border-bottom: 3px solid #FF7F4C;">Personalized Tips</h4>
+                    </div>
+                    <div class="rightarrow">
+                        <h1><i class="ri-arrow-right-line"></i></h1>
+                    </div>
+                    
+                </div>
+                <div class="cardbottom" id="secondcardbottom">
+                    <ul>
+                        <div class="listline">
+                            <img src="https://moneyview.in/images/ic-productSection-ct-prop1.svg" alt="chotiimg">
+                            <li>Detailed Report</li>
+                        </div>
+                        
+                        <div class="listline">
+                            <img src="https://moneyview.in/images/ic-productSection-ct-prop2.svg" alt="chotiimg">
+                            <li>Insights for a better score</li>
+                        </div>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="third">
+        <h1>We’re better in every sense!</h1>
+        <div class="part1Third">
+
+          <div class="cardss">
+            <img
+              src="https://moneyview.in/images/ic-trust-factors-fully-personalised-v2.svg"
+              alt=""
+            />
+            <div class="cardText">
+              <h1>Fully personalized</h1>
+              <p>products for your needs</p>
+            </div>
+          </div>
+          <div class="cardss">
+            <img
+              src="https://moneyview.in/images/ic-trust-factors-zero-paperwork-v2.svg"
+              alt=""
+            />
+            <div class="cardText">
+              <h1>Zero paperworks</h1>
+              <p>makes it easy & faster</p>
+            </div>
+          </div>
+          <div class="cardss">
+            <img
+              src="https://moneyview.in/images/ic-trust-factors-transparent-v2.svg"
+              alt=""
+            />
+            <div class="cardText">
+              <h1>100% transparent,</h1>
+              <p>100% peace of mind</p>
+            </div>
+          </div>
+        </div>
+        <div class="part2Third">
+          <div class="achievements">
+            <img
+              src="https://moneyview.in/images/ic-trustFactor-users.svg"
+              alt=""
+            />
+            <div class="wrap">
+              <p>Join</p>
+              <h1>60+</h1>
+              <h6>million users</h6>
+            </div>
+          </div>
+          <div class="achievements">
+            <img
+              src="https://moneyview.in/images/ic-trustFactor-rating.svg"
+              alt=""
+            />
+            <div class="wrap">
+              <p>Rated</p>
+              <h1>9.8</h1>
+              <h6>on Play Store</h6>
+            </div>
+          </div>
+        </div>
+        <div class="part3Third">
+            <div class="leftChild">
+                <video muted autoplay  loop>
+                <source src="https://videos.pexels.com/video-files/5849633/5849633-hd_1920_1080_30fps.mp4">
+                </video>
+            </div>
+            <div class="rightChild">
+                <h1>Personal Loan</h1>
+                <p>Say goodbye to cash issues with instant & affordable loans</p>
+                <button>Learn More</button>
+            </div>
+        </div>
+    </div>
+    <div class="fourth">
+        <div class="container">
+            <div class="elems">
+                <img src="https://assets-global.website-files.com/64ea130f10713e77f6320da4/6538bf876d3dbf4ec789ed64_two_wheeler_v2-p-500.webp" alt="">
+                <h3>Two Wheeler</h3>
+            </div>
+            <div class="elems">
+                <img src="https://assets-global.website-files.com/64ea130f10713e77f6320da4/64ea3a84b82f71fb77eadfb8_education_loan-p-500.webp" alt="">
+                <h3>Education</h3>
+            </div>
+            <div class="elems">
+                <img src="https://assets-global.website-files.com/64ea130f10713e77f6320da4/64ea3a847cdf72d1a1068b4d_laptop_loan-p-500.webp" alt="">
+                <h3>Laptop</h3>
+            </div>
+            <div class="elems">
+                <img src="https://assets-global.website-files.com/64ea130f10713e77f6320da4/650ab0056cb14603dbd2520b_pexels-anna-shvets-3845126%201%20(1).webp" alt="">
+                <h3>Emergency</h3>
+            </div>
+            <div class="elems">
+                <img src="https://assets-global.website-files.com/64ea130f10713e77f6320da4/6538bf876d3dbf4ec789ed64_two_wheeler_v2-p-500.webp" alt="">
+                <h3>Two Wheeler</h3>
+            </div>
+            <div class="elems">
+                <img src="https://assets-global.website-files.com/64ea130f10713e77f6320da4/64ea3a84b82f71fb77eadfb8_education_loan-p-500.webp" alt="">
+                <h3>Education</h3>
+            </div>
+            <div class="elems">
+                <img src="https://assets-global.website-files.com/64ea130f10713e77f6320da4/64ea3a847cdf72d1a1068b4d_laptop_loan-p-500.webp" alt="">
+                <h3>Laptop</h3>
+            </div>
+            <div class="elems">
+                <img src="https://assets-global.website-files.com/64ea130f10713e77f6320da4/650ab0056cb14603dbd2520b_pexels-anna-shvets-3845126%201%20(1).webp" alt="">
+                <h3>Emergency</h3>
+            </div>
+        </div>
+    </div>
+    <footer class="footer" id="footer">
+        <div class="footer-box">
+            <div class="footer-line">
+                <div class="footer-head">
+                    <h3>The Company</h3>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Funding Member:DLAI</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="footer-line">
+                <div class="footer-head">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Personal Loan</a></li>
+                        <li><a href="#">Credit Tracker</a></li>
+                        <li><a href="#">EMI Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-head">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">Media Coverage</a></li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+            <div class="footer-line">
+                <div class="footer-head">
+                    <h3>Partners</h3>
+                    <ul>
+                        <li><a href="#">Lending Partners</a></li>
+                        <li><a href="#">Banking Partners</a></li>
+                        <li><a href="#">Business Partners</a></li>
+                        <li><a href="#">Digital Lead Partners</a></li>
+                        <li><a href="#">Collection Agencies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-line">
+                <div class="footer-head">
+                    <h3>Contact us</h3>
+                    <ul>
+                        <li><a href="#">care@loanbuddy.in</a></li>
+                        <li><a href="#">080 6939 0476</a></li>
+                        <li><a href="#">Customer Support</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-head">
+                    <h3>Grievance Redresssal</h3>
+                    <ul>
+                        <li><a href="#">Loan Grievance Redresssal</a></li>
+                        <li><a href="#">Banking Grievance Redresssal</a></li>
+                        <li><a href="#">Pro Saver Grievance Redresssal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="footer-content">
+                <div class="social-icons">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <form class="subscribe-form">
+                  <input type="email" placeholder="Enter your email">
+                  <button type="submit">Subscribe</button>
+                </form>
+              </div>
+              <p class="copyright">
+                &copy; <span id="currentYear"></span> Your Website. All rights reserved.
+              </p>
+        </div>
+      </footer>
+    </div>
+    
+    <script src="static/./script.js"></script>
+  </body>
+</html>
